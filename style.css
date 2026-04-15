@@ -1,0 +1,156 @@
+h1 {color: white }
+h2 {
+    color:black;
+    }
+    body {
+    margin:0;
+    font-family:Georgia,'Times New Roman', Times, serif;
+    background:#FAFAFA
+    }
+    footer {
+    background:#800000;
+    color:white
+    }
+    header {
+    background:#800000;
+    color:white;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+    }
+    #menuBtn,#closeBtn,#switch{cursor:pointer} 
+    #closeBtn {
+    color: white;        /* rende la X bianca */
+    font-size: 20px;    /* dimensione corretta */
+    padding: 10px;      /* spazio interno, non più schiacciata */
+    display: block;     /* necessario per text-align */
+    text-align: right;  /* sposta la X a destra */
+    cursor: pointer;    /* già ok, ma confermato */
+    }
+    #menuBtn {
+    color: white;
+    font-size:22px
+    }
+
+    #sidebar {
+    position:fixed;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#800000;
+    transition:.3s;
+    padding-top:20px
+    }
+    #sidebar a {
+    display:block;
+    color: white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:20px;
+    margin:5px 10px
+    }
+    #sidebar a:hover{
+        cursor: pointer;
+        background:#800000
+    }
+    .hero {
+    height:250px;
+    /*Sfondo della prima immagine "Scopri Reggio emilia"*/
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("https://i.pinimg.com/1200x/93/79/b9/9379b994a02e1efbf29854ced81c2a63.jpg") center/cover;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center
+    }
+    .section {
+    display:none;
+    padding:20px
+    }
+    .active{display:block}
+    .grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px
+    }
+    .card { background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+    cursor:pointer
+    }
+    .card:hover{transform:translateY(-5px) scale(1.02)}
+    .card img {
+    width:100%;
+    height:160px;
+    object-fit:cover
+    }
+    .card-content,.login-box{padding:10px}
+    button,input {
+    border:none;
+    border-radius:20px
+    }
+    button {
+    padding:10px 15px;
+    background:#951818;
+    color:white;
+    cursor:pointer
+    }
+    input {
+        padding:10px;
+        border:1px solid #ccc
+    }
+    footer {
+        text-align:center;
+        padding:20px;
+        margin-top:20px
+    }
+    .login-box {
+    max-width:300px;
+    margin:80px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 1);
+    text-align:center
+    }
+    .login-box input {
+    width:100%;
+    margin:10px 0
+    }
+    #switch {
+    color:black;
+    display:block;
+    margin-top:10px
+    }
+    #msg {
+    height:20px;
+    color:red;
+    margin-top:5px
+    }
+/* Bottoni fascia oraria */
+.time-buttons { 
+    display:flex; gap:12px; 
+    margin:20px 0; 
+    flex-wrap:wrap 
+}
+.time-btn { 
+    padding:12px 24px;
+    font-size:16px;
+    border-radius:30px;
+    background:#951818;
+    color:white;
+    cursor:pointer;
+    border:none;
+    transition:.2s3
+}
+.time-btn:hover{
+    background:#6e0f0f;
+    transform:scale(1.04)
+}
+
+.add-btn {
+margin-bottom:20px;
+}

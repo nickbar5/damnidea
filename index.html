@@ -1,0 +1,111 @@
+<!DOCTYPE html>   
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <title>Dàm n'idèa!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+  <header>
+    <span id="menuBtn" onclick="openMenu()">☰</span>
+    <h1>Dàm n'idèa!</h1>
+    <span id="user"></span>
+  </header>
+ 
+  <div id="sidebar">
+    <div id="closeBtn" onclick="closeMenu()">✖</div>
+    <a onclick="show('home')">Home</a>
+    <a onclick="show('luoghi')">Luoghi</a>
+    <a onclick="show('login')">Login</a>
+  </div>
+ 
+  <div id="home" class="section active">
+    <div class="hero"><h1>Scopri Reggio Emilia</h1></div>
+ 
+    <!-- Bottoni fascia oraria -->
+    <div class="time-buttons" style="padding:0 0;margin-top:20px">
+      <button class="time-btn" onclick="showFascia('mattina')">🌅 Mattina</button>
+      <button class="time-btn" onclick="showFascia('pomeriggio')">☀️ Pomeriggio</button>
+      <button class="time-btn" onclick="showFascia('sera')">🌙 Sera</button>
+    </div>
+ 
+    <h2>In evidenza</h2>
+    <div class="grid">
+      <div class="card" onclick="show('luoghi')"><img src="https://i.pinimg.com/736x/6f/af/65/6faf65df0ff2d88a567be43054167787.jpg"><div class="card-content"><h3>Petali</h3><p>Shopping e ritrovo.</p></div></div>
+      <div class="card" onclick="show('luoghi')"><img src="https://i.pinimg.com/736x/62/79/eb/6279ebbc02020e79898063066d3e2c1f.jpg"><div class="card-content"><h3>Skatepark</h3><p>Sport urbano.</p></div></div>
+      <div class="card" onclick="show('luoghi')"><img src="https://i.pinimg.com/474x/64/64/b8/6464b817bd1b7293413621fddf86166e.jpg"><div class="card-content"><h3>Escape Room</h3><p>Esperienze di gruppo.</p></div></div>
+    </div>
+  </div>
+ 
+  <!-- Sezione fascia oraria -->
+  <div id="fascia" class="section">
+    <h1 id="fasciaTitle" style="color:#800000"></h1>
+    <div class="grid" id="fasciaGrid"></div>
+    <br>
+    <button onclick="show('home')">⬅ Torna indietro</button>
+  </div>
+ 
+<div id="luoghi" class="section">
+  <h2>Luoghi da visitare</h2>
+  <button id="addPlaceBtn" class="add-btn" onclick="openPopup()" disabled style="cursor:not-allowed">+ Aggiungi luogo</button>
+  <div class="grid" id="luoghiGrid">
+    <div class="card" onclick="openPlace('Petali','I Petali è un centro commerciale e uno dei principali punti di ritrovo della città. Offre 60 negozi, un cinema multisala con 11 sale, una palestra Virgin ed eventi. È facilmente raggiungibile a piedi, in bici o con i mezzi dal centro. Coperto e climatizzato, è perfetto quando fa troppo freddo o troppo caldo per stare fuori. Wi-Fi gratuito, parcheggio grande e aree relax dove fermarsi a chiacchierare senza spendere nulla. \n \n Si trova in Piazzale Atleti Azzurri d\'Italia, 5. \n Orario: Aperto tutti i giorni dalle 10:00 alle 21:00.')"><img src="https://i.pinimg.com/736x/6f/af/65/6faf65df0ff2d88a567be43054167787.jpg"><div class="card-content"><h3>Petali</h3><p>Centro commerciale famoso.</p></div></div>
+    <div class="card" onclick="openPlace('Skatepark','Lo Skatepark delle Reggiane è uno dei migliori d\'Italia e si trova a due passi dal centro città. Offre 1.700 mq di strutture per skateboard, BMX e pattinaggio, oltre a un playground con campi da basket. È gratuito e aperto a tutti. \n \n Si trova in Piazzale Europa ed è aperto tutti i giorni con accesso libero.')"><img src="https://i.pinimg.com/736x/62/79/eb/6279ebbc02020e79898063066d3e2c1f.jpg"><div class="card-content"><h3>Skatepark</h3><p>Sport urbano.</p></div></div>
+    <div class="card" onclick="openPlace('Escape Room','A Reggio Emilia ci sono più escape room dove puoi sfidare i tuoi amici a risolvere enigmi in 60 minuti. Ogni stanza ha un tema diverso: avventura, horror, mistero. La prenotazione è consigliata, specialmente nel weekend. \n I prezzi si aggirano sui 20–25€ a persona. \n \n Le principali sono: \n Arbitroom (Via Monti Urali 38/6), \n Escape Room Club (Via Eleonora Duse 3) \n The Room Escape Game (centro città). \n \n Sono aperti su prenotazione, anche il weekend sera.')"><img src="https://i.pinimg.com/474x/64/64/b8/6464b817bd1b7293413621fddf86166e.jpg"><div class="card-content"><h3>Escape Room</h3><p>Esperienze immersive.</p></div></div>
+    <div class="card" onclick="openPlace('Cerwood','Cerwood è il parco avventura più grande d\'Italia, con percorsi acrobatici tra gli alberi adatti a tutti i livelli di difficoltà. Ci sono percorsi per ogni età, dalle versioni più semplici fino alle sfide più impegnative per chi cerca adrenalina. È un\'ottima idea per una gita fuori porta diversa dal solito, perfetta sia in settimana che nel weekend. \n \n E\' situato in Via Massenzatico 92, Reggio Emilia ed è aperto il weekend e nei giorni festivi; in estate anche nei giorni feriali. \n È consigliata la prenotazione.')"><img src="https://i.pinimg.com/1200x/30/1c/2a/301c2aa27b97f310b5947c7bb09b6ec3.jpg"><div class="card-content"><h3>Cerwood</h3><p>Parco avventura.</p></div></div>
+    <div class="card" onclick="openPlace('Parco Crostolo',' Il Parco Crostolo è il polmone verde di Reggio Emilia: un lungo corridoio naturale che attraversa la città lungo il torrente Crostolo. È il posto ideale per andare in bici, fare jogging, giocare a frisbee o semplicemente stare all\'aperto con gli amici senza spendere nulla. D\'estate diventa ancora più frequentato, con aree erbose perfette per stendersi e rilassarsi. \n Si estende dal centro verso sud con l\'ingresso principale da Viale Timavo.')"><img src="https://i.pinimg.com/736x/49/71/a5/4971a556a7a3a347357427a8282fb16c.jpg"><div class="card-content"><h3>Parco Crostolo</h3><p>Natura e relax.</p></div></div>
+    <div class="card" onclick="openPlace('Discoteche in città','A Reggio ci sono diverse possibilità: \n \n L\'Archive Club (Via Garonna, 9) \n è un disco club nel cuore della città con serate settimanali di musica dance ed elettronica, frequentato da chi vuole ballare davvero. \n \n Il Number ONE Club (Via Berta 8) \n è l\'altra opzione più gettonata, con serate energiche e buona affluenza di giovani. \n \n L\'Italghisa ( Via dei Gonzaga, 41 ) \n è il club perfetto per: discoteca, live music e concerti, ma anche ristorante e birreria per il pre-serata. La programmazione è molto varia, si va dal commerciale al revival, dalla dance alla musica latina; quindi c\'è sempre qualcosa per tutti i gusti. Organizzano anche feste a tema, serate trap/rap e party speciali durante l\'anno. \n \n Il Q Club ( Via Piave, 1/B) \n è una discoteca moderna ed elegante ai piedi dei colli matildici, a Montecavolo di Quattro Castella. Ha due sale con proposte musicali diverse: il venerdì una sala lati')"><img src="https://i.pinimg.com/1200x/00/5f/7b/005f7b70d57703141f081f07dd004945.jpg"><div class="card-content"><h3>Discoteche in città</h3><p>Party e divertimento</p></div></div>
+    <div class="card" onclick="openPlace('Discoteche fuori città',' Per una serata fuori dal comune vale la pena spostarsi. Ecco le tre migliori opzioni: \n\n Fuori Orario\n La più iconica. Da trent\'anni è uno dei club più famosi del Nord Italia, ospitato in una vecchia stazione ferroviaria a Taneto di Gattatico (15 min da RE). Tre piste, concerti live, dj set, ristorante e bar. C\'è il discobus da Reggio per tornare senza pensieri. Tessera ARCI obbligatoria (si fa sul posto). \n Serate dalle 20:00 alle 3:30. \n 📍 Via Don Minzoni 96/B, Taneto di Gattatico. \n\n Corallo Disco\n   Il tempio del rock reggiano a Scandiano (10 min da RE). Serate a tema rock, metal e alternative, frequentato da generazioni di ragazzi della zona. Serate nel weekend. \n 📍 Scandiano \n \n Okay Disco \n discoteca multisala a Villa Minozzo sull\'Appennino (45 min). Generi diversi ogni sera, feste a tema, atmosfera da gita fuori porta. Serate nel weekend. \n 📍 Villa Minozzo')"><img src="https://i.pinimg.com/736x/44/2c/0c/442c0c52e8373e7d6066dc3c48f015cf.jpg"><div class="card-content"><h3>Discoteche fuori città</h3><p>Party e divertimento</p></div></div>
+    <div class="card" onclick="openPlace('Locali serali con giochi','Questi posti uniscono il bere a qualcosa da fare, perfetti per serate in gruppo anche per i più giovani. \n\n Club Play Off (Via Beniamino Gigli, 7) \n Biliardo, ping pong, calciobalilla, PlayStation, karaoke e musica live. Organizzano serate a tema e si vedono le partite in diretta. Parcheggio ampio. \n\n Pool Club (Via Papa Giovanni XXIII) \n Sala biliardo e birreria in 300 mq. Tranquillo, ideale per chi vuole giocare senza confusione. \n \n Doppio Malto (Via Gramsci, 45) \n Birra artigianale, biliardo, freccette, ping pong e canestro. Funziona dall\'aperitivo fino a tarda sera. \n \n Bowling 2000 (Via Vistola, 13) \n 14 piste da bowling, laser game da 200 mq, biliardo, ping pong, videogiochi e pizzeria. Ottimo anche per feste di gruppo. \n Orario: Venerdì 19–01, Sabato 16–02, Domenica 16–00.')"><img src="https://i.pinimg.com/736x/a3/49/30/a34930b3bc66199f6aaea9f4bbba79fb.jpg"><div class="card-content"><h3>Locali serali con giochi</h3><p>Non solo cocktail</p></div></div>
+    <div class="card" onclick="openPlace('Bar di tendenza','The Riff (Piazza San Prospero, 4) \n Fondato da Benny Benassi e Fabio Volo, serate soul, funky e vintage. Niente hit da classifica, tanta atmosfera. \n\n Rebell (centro RE) \n Cocktail bar con libreria Einaudi integrata e spazio per mostre ed eventi. Serate con dj set e inaugurazioni. Molto nicchia. \n \n Casa Frida (centro RE) \n Bottega di vini naturali con serate di degustazione e eventi informali. Per chi vuole scoprire qualcosa di nuovo.')"><img src="https://i.pinimg.com/736x/8b/2a/69/8b2a69e946f2e79409c86c564a45c8fb.jpg"><div class="card-content"><h3>Bar di tendenza</h3><p>Posti diversi dal solito, per chi vuole qualcosa con più carattere. </p></div></div>
+    <div class="card" onclick="openPlace('Gite in natura','Quando si vuole cambiare aria e stare all\'aperto, questi sono i posti più spettacolari nei dintorni. \n \n Pietra di Bismantova (a Castelnovo ne\' Monti, 45 min): \n un massiccio roccioso imponente alto 300 metri con un sentiero segnalato fino in cima. Il panorama vale tutta la salita. Trekking accessibile anche a chi non è allenato. Accesso libero. \n\n Lago Calamone e Monte Ventasso ( a 50 min): \n lago circondato da boschi di faggi e abeti, con sentieri per tutti i livelli. Perfetto per una gita estiva o autunnale. \n \n Salse di Nirano (a Modena, 40 min): \n vulcanelli di fango che eruttano acqua salata e metano. Sembra un paesaggio alieno, è gratis e dura mezz\'ora. Da vedere almeno una volta.')"><img src="https://i.pinimg.com/736x/e2/af/ed/e2afed548cb3db6827f46be627ed4add.jpg"><div class="card-content"><h3>Gite in natura</h3><p>Perfette per una boccata d'aria e un per passare un pomeriggio in pieno relax</p></div></div>
+  </div>
+</div>
+ 
+<div id="dettaglio" class="section">
+  <h2 id="placeTitle"></h2>
+  <p id="placeText"></p>
+  <button id="backBtn" onclick="show('luoghi')">⬅ Torna indietro</button>
+</div>
+ 
+<div id="login" class="section">
+  <div class="login-box">
+    <h2 id="title">Login</h2>
+    <input id="nome" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="submitLogin()">Continua</button>
+    <span id="switch" onclick="toggleMode()">Non hai un account? Registrati</span>
+    <div id="msg"></div>
+  </div>
+</div>
+ 
+<!-- POPUP -->
+<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+  
+  <div style="background:white; padding:20px; border-radius:15px; width:300px;">
+    <h3>Aggiungi luogo</h3>
+    
+    <input id="newTitle" placeholder="Nome luogo"><br><br>
+    <input id="newDesc" placeholder="Descrizione breve"><br><br>
+    <input id="newImg" placeholder="URL immagine"><br><br>
+    <textarea id="newInfo" placeholder="Descrizione completa"></textarea><br><br>
+    
+    <button onclick="addCard()">Salva</button>
+    <button onclick="closePopup()">Chiudi</button>
+  </div>
+
+</div>
+
+<footer>
+  <h3>Contatti</h3>
+  <p>Email: info@visitreggio.it</p>
+  <p>Telefono: 123456789</p>
+  <p>© 2026 Reggio Experience</p>
+</footer>
+ 
+<script src="script.js"></script>
+ 
+</body>
+</html>
